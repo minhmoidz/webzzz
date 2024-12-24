@@ -1,0 +1,176 @@
+.trangchu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  background-color: #ffffff;
+  background: url("https://cdn.nhathuoclongchau.com.vn/unsafe/1920x0/filters:quality(90)/https://cms-prod.s3-sgn09.fptcloud.com/1_Theme_Ban_chay_web_1_50ed807746.png");
+
+  .content {
+    max-width: 1200px;
+    width: 100%;
+
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+
+      .product-item {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        max-height: 450px; 
+        max-width: 300px;
+
+        &:hover {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transform: translateY(-5px);
+          border: #007bff 2px solid;
+        }
+
+        img {
+          width: 80%;
+          height: 180px;
+          object-fit: cover;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        h3 {
+          margin: 15px 0;
+          font-size: 18px;
+          color: #555;
+
+          /* Đảm bảo link không có gạch dưới và giữ màu */
+          a {
+            text-decoration: none; /* Xóa gạch dưới */
+            color: inherit; /* Giữ màu của chữ giống như bình thường */
+          }
+
+          a:visited {
+            color: inherit; /* Giữ màu không thay đổi sau khi nhấp */
+          }
+
+          a:hover {
+            text-decoration: underline; /* Tạo hiệu ứng gạch dưới khi hover */
+          }
+        }
+      }
+    }
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+button {
+  margin: 15px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  .chat-bubble {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .chat-box {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 450px;
+    height: 650px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    .chat-header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h4 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .chat-options {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+
+      button {
+        background-color: #f1f1f1;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+    }
+
+    .chat-content {
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}

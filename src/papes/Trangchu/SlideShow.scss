@@ -1,0 +1,61 @@
+/* Đặt kích thước và căn giữa slideshow */
+.slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    // margin: auto;
+    overflow: hidden;
+  }
+  
+  .slide img {
+    width: 1000px; /* Chiếm toàn bộ chiều rộng container */
+    border-radius: 10px; /* Bo góc ảnh */
+    height: 300px;
+
+  }
+  
+  /* Dấu chấm điều hướng */
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  /* Kiểm soát kích thước của ảnh */
+
+  .slideshow-img{
+    display: flex;
+    flex-direction: column;
+  }
+   .wrap{
+    display: flex;
+  } 
+  .small-image-container {
+    // display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-left: 20px;
+  }
+  
+  .small-image {
+    width: 600px; /* Kích thước ảnh nhỏ */
+    height: 150px; /* Kích thước ảnh nhỏ */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    border-radius: 10px; /* Bo góc ảnh */
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+    // border: 2px solid #ccc; /* Viền ảnh */
+    transition: transform 0.3s; /* Hiệu ứng khi hover */
+    gap:20px
+  }

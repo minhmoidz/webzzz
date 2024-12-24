@@ -1,0 +1,35 @@
+
+.trangchu_navbar {
+    background-color: #f8f9fa; /* Màu nền của navbar */
+    padding: 10px 0; /* Khoảng cách trên dưới */
+    border-bottom: 1px solid #ddd; /* Đường viền dưới */
+    // box-sizing:border-box;
+    width: 100%;
+    margin-bottom: 50px;
+  
+    ul {
+      display: flex; /* Dùng flexbox để căn đều */
+      justify-content: space-evenly; /* Chia đều các mục */
+      list-style: none; /* Bỏ gạch đầu dòng */
+      margin: 0;
+      padding: 0;
+    }
+  
+    li {
+      flex: 1; /* Mỗi mục chiếm một phần bằng nhau */
+      text-align: center; /* Căn giữa chữ trong từng mục */
+      padding: 10px 0; /* Khoảng cách trên dưới */
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s; /* Hiệu ứng hover */
+
+
+        
+  
+      &:hover {
+        background-color: transparent; /* Màu nền khi hover */
+        color: blue; /* Màu chữ khi hover */
+        border-bottom: 2px solid blue; /* Thêm đường viền dưới màu xanh */
+
+      }
+    }
+  }
