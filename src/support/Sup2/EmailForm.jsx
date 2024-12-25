@@ -100,23 +100,18 @@ const EmailForm = () => {
                 sender: email,
                 text: currentMessage.trim(),
                 timestamp: new Date().toISOString(),
-                roomId: roomId  // Thêm roomId vào tin nhắn
+                roomId: roomId
             };
-
+    
+            // Chỉ gửi tin nhắn qua socket, không thêm vào state
             socket.send(JSON.stringify(messageToSend));
-
-            setChatMessages(prevMessages => [...prevMessages, {
-                ...messageToSend,
-                timestamp: new Date().toLocaleTimeString()
-            }]);
-            
             setCurrentMessage('');
+            
             if (messagesEndRef.current) {
                 messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
             }
         }
     };
-
     const generateRoomId = (email) => {
         // Tạo roomId dựa trên email và timestamp
         return `room_${email.split('@')[0]}_${Date.now()}`;
@@ -130,15 +125,6 @@ const EmailForm = () => {
             const newRoomId = generateRoomId(email);
             setRoomId(newRoomId);
             setChatStarted(true);
-            
-            // Thêm tin nhắn chào mừng với roomId
-            setChatMessages([{
-                id: `welcome-${Date.now()}`,
-                sender: 'admin',
-                text: `Xin chào! Tôi có thể giúp gì cho bạn? (Mã phòng: ${newRoomId})`,
-                timestamp: new Date().toLocaleTimeString(),
-                roomId: newRoomId
-            }]);
             
             setLoading(false);
         } else {
@@ -157,7 +143,7 @@ const EmailForm = () => {
                     {chatMessages.map((message, index) => (
                         <div 
                             key={message.id || `${message.timestamp}-${message.sender}-${index}`}
-                            className={`message ${message.sender === 'admin' ? 'admin-message' : 'user-message'}`}
+                            className={`message ${message.sender === 'Anonymous' ? 'admin-message' : 'user-message'}`}
                         >
                             <strong>{message.sender}</strong>
                             <p>{message.text}</p>

@@ -25,6 +25,8 @@ import CheckoutForm from "./papes/Checkform/CheckForm.jsx"; // Import CheckoutFo
 import Account from "./papes/Trangchu/Account.jsx";
 import Signup from "./papes/signup/Signup.jsx";
 import AdminMessages from "../src/papes/mess/Mess.jsx"
+import Benh from "../src/papes/benh/Benh.jsx"
+import Suckhoe from "../src/papes/suckhoe/Suckhoe.jsx"
 // import TrangChu from "./papes/Trangchu/Trangchu.jsx";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -73,6 +75,8 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<CheckoutForm />} />
               <Route path="/account" element={<Account/>} />
+              <Route path="/suckhoe" element={<Suckhoe/>} />
+              <Route path="/benh" element={<Benh/>} />
               {/* <Route path="/dangky" element={<Signup/>} /> */}
 
             </Route>

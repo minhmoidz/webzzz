@@ -31,7 +31,7 @@ const Sidebar = () => {
       <div className="center">
         <ul>  
           <p className="title">MENU</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/home" style={{ textDecoration: "none" }}>
             <li>
               <DashboardIcon className="icon" />
               <span>Dashboard</span>

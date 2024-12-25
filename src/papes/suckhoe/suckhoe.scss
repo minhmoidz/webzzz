@@ -1,0 +1,40 @@
+.health-care {
+    .content {
+      padding: 20px;
+    }
+  
+    .articles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .article-item {
+        background: #f4f4f4;
+        padding: 15px;
+        border-radius: 8px;
+        width: 48%;
+        box-sizing: border-box;
+  
+        h3 {
+          font-size: 1.5rem;
+          color: #333;
+        }
+  
+        .read-more {
+          color: #007bff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  
+    .back-home {
+      margin-top: 20px;
+      .home-link {
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: none;
+      }
+    }
+  }
+  

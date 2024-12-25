@@ -19,32 +19,33 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-
+    
         if (!email || !password) {
             toast.error('Email và mật khẩu không được để trống!');
             return;
         }
-
+    
         setLoading(true);
-
+    
         try {
-            const response = await fetch('http://localhost:1000/login', {
+            // API endpoint tùy thuộc vào loại tài khoản
+            const apiEndpoint = accountType === 'admin' 
+                ? 'http://localhost:1000/admin/login' 
+                : 'http://localhost:1000/login';
+    
+            const response = await fetch(apiEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password, accountType }),
+                body: JSON.stringify({ email, password }),
             });
-
+    
             const result = await response.json();
-
+    
             if (response.ok) {
                 toast.success(result.message);
-                if (accountType === 'admin') {
-                    navigate('/home');
-                } else {
-                    navigate('/');
-                }
+                navigate(accountType === 'admin' ? '/home' : '/');
             } else {
                 toast.error(result.message || 'Đăng nhập thất bại!');
             }
@@ -55,6 +56,7 @@ const Login = () => {
             setLoading(false);
         }
     };
+    
     const handleForgotPassword = async (e) => {
         e.preventDefault();
     
